@@ -1,0 +1,45 @@
+version: "3.2"
+
+services:
+  nexus:
+    image: sonatype/nexus3
+    ports:
+      - "8081:8081"
+      - "8082:8082"
+    volumes: 
+      - "nexus-data:/nexus-data"
+    networks:
+      - semantic-release
+    stop_grace_period: 120s
+
+  
+  jenkins:
+    image: jenkins/jenkins:lts
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - "jenkins-data:/var/jenkins_home"
+    networks:
+      - semantic-release
+  gitea:
+    image: gitea/gitea:latest
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    restart: always
+    networks:
+      - semantic-release
+    volumes:
+      - ./gitea:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "3000:3000"
+      - "222:22"
+
+volumes:
+  jenkins-data:
+  nexus-data:  
+networks:
+  semantic-release:
