@@ -6,5 +6,8 @@
     ["@saithodev/semantic-release-gitea", {
       "giteaUrl": "http://localhost:3000",
     }],
+    ["@semantic-release/exec", {
+      "publishCmd": "./gradlew jib -DsendCredentialsOverHttp=true -Djib.to.tags=${nextRelease.version}"
+    }]
   ]
 }

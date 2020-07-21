@@ -19,7 +19,8 @@ Add configuration in `build.gradle`
 
 ```sh
 sudo apt-get install node npm
-sudo npm install semantic-release -g
+sudo npm install semantic-release @@semnatic-release/exec -g
+sudo npm install @saithodev/semantic-release-gitea -g
 ```
 
 ### Configuration
