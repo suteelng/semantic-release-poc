@@ -32,3 +32,6 @@ Authentication
 - SSH
 
 Jenkins token: 11f16d1ee4c0d19ba1622e3fefbfd39052
+
+GITEA_TOKEN: 0d52217a471423ba6210588baa607ae69135a342
+GITEA_URL: http://localhost:3000
