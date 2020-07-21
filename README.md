@@ -43,4 +43,8 @@ GITEA_URL: http://localhost:3000
 ## Config Jenkins
 
 - Install Gitea plugin
-- 
+- Config multi-branch pipeline with git repo (using git)
+
+
+## todo
+https://hub.docker.com/r/jenkins/agent
