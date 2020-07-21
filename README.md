@@ -39,3 +39,8 @@ export GITEA_TOKEN: 0d52217a471423ba6210588baa607ae69135a342
 ```
 
 GITEA_URL: http://localhost:3000
+
+## Config Jenkins
+
+- Install Gitea plugin
+- 
