@@ -26,7 +26,7 @@ pipeline {
         stage("release") {
             steps {
                 echo "[INFO] GIT_BRANCH: ${env.GIT_BRANCH}"
-                sh "GITEA_TOKEN=0d52217a471423ba6210588baa607ae69135a342 semantic-release --skip-git-push-check"
+                sh "GITEA_TOKEN=0d52217a471423ba6210588baa607ae69135a342 semantic-release --skip-git-push-check --debug"
             }
         }
     }
