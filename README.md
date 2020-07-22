@@ -44,6 +44,10 @@ GITEA_URL: http://localhost:3000
 
 - Install Gitea plugin
 - Config multi-branch pipeline with git repo (using git)
+- Create agent:
+    `Manage Nodes and Clouds` -> new Node. Give name and select permanent agent. Next. 
+    Remote root directory: /home/jenkins/agent
+    save and jenkins will shows start up command. Copy the command to run it in slave jenkins
 
 
 ## todo

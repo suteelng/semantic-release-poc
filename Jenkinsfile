@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        docker {image 'jenkins/agent:latest-jdk11'}
-    }
+    agent { label 'java11' }
     stages {
         stage('Initialize'){
             steps {
