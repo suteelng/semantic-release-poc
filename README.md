@@ -35,7 +35,7 @@ Authentication
 Jenkins token: 11f16d1ee4c0d19ba1622e3fefbfd39052
 
 ```shell script
-export GITEA_TOKEN: 0d52217a471423ba6210588baa607ae69135a342
+export GITEA_TOKEN=0d52217a471423ba6210588baa607ae69135a342
 ```
 
 GITEA_URL: http://gitea:3000
@@ -49,3 +49,8 @@ GITEA_URL: http://gitea:3000
     Remote root directory: /home/jenkins/agent
     save and jenkins will shows start up command. Copy the command to run it in slave jenkins
     https://hub.docker.com/r/jenkins/agent
+
+Build jenkins agent with nodejs support
+```shell script
+docker build -t jenkins-agent:jdk11-sr .
+```
