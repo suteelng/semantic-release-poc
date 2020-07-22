@@ -15,15 +15,6 @@ pipeline {
               ])
             }
         }
-//         stage("publish") {
-//             steps {
-//                 withCredentials([usernamePassword(credentialsId: 'mydocker-userpass', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')
-//
-//                 ]){
-//                     sh "./gradlew jib -DsendCredentialsOverHttp=true -Djib.to.auth.username=${USERNAME} -Djib.to.auth.password=${PASSWORD}"
-//                 }
-//             }
-//         }
         stage("release") {
             steps {
                 echo "[INFO] GIT_BRANCH: ${env.GIT_BRANCH}"
