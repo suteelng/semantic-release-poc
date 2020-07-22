@@ -8,7 +8,11 @@ pipeline {
         }
         stage("publish") {
             steps {
-                sh "./gradlew jib -DsendCredentialsOverHttp=true"
+                withCredentials([usernamePassword(credentialsId: 'mydocker-userpass', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')
+
+                ]){
+                    sh "./gradlew jib -DsendCredentialsOverHttp=true -Djib.to.auth.username=${USERNAME} -Djib.to.auth.password=${PASSWORD}"
+                }
             }
         }
     }
