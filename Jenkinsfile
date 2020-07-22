@@ -6,13 +6,18 @@ pipeline {
                 sh './gradlew test'
             }
         }
-        stage("publish") {
+//         stage("publish") {
+//             steps {
+//                 withCredentials([usernamePassword(credentialsId: 'mydocker-userpass', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')
+//
+//                 ]){
+//                     sh "./gradlew jib -DsendCredentialsOverHttp=true -Djib.to.auth.username=${USERNAME} -Djib.to.auth.password=${PASSWORD}"
+//                 }
+//             }
+//         }
+        stage("release") {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'mydocker-userpass', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')
-
-                ]){
-                    sh "./gradlew jib -DsendCredentialsOverHttp=true -Djib.to.auth.username=${USERNAME} -Djib.to.auth.password=${PASSWORD}"
-                }
+                sh "semantic-release"
             }
         }
     }
