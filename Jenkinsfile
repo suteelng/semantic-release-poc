@@ -6,5 +6,10 @@ pipeline {
                 sh './gradlew test'
             }
         }
+        stage("publish") {
+            steps {
+                sh "./gradlew jib -DsendCredentialsOverHttp=true"
+            }
+        }
     }
 }

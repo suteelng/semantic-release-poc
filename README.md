@@ -19,7 +19,7 @@ Add configuration in `build.gradle`
 
 ```sh
 sudo apt-get install node npm
-sudo npm install semantic-release @@semnatic-release/exec -g
+sudo npm install semantic-release @semantic-release/exec -g
 sudo npm install @saithodev/semantic-release-gitea -g
 ```
 
@@ -38,7 +38,7 @@ Jenkins token: 11f16d1ee4c0d19ba1622e3fefbfd39052
 export GITEA_TOKEN: 0d52217a471423ba6210588baa607ae69135a342
 ```
 
-GITEA_URL: http://localhost:3000
+GITEA_URL: http://gitea:3000
 
 ## Config Jenkins
 
@@ -48,7 +48,4 @@ GITEA_URL: http://localhost:3000
     `Manage Nodes and Clouds` -> new Node. Give name and select permanent agent. Next. 
     Remote root directory: /home/jenkins/agent
     save and jenkins will shows start up command. Copy the command to run it in slave jenkins
-
-
-## todo
-https://hub.docker.com/r/jenkins/agent
+    https://hub.docker.com/r/jenkins/agent

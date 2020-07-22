@@ -26,7 +26,7 @@ services:
     networks:
       - semantic-release
   jenkins-slave-jdk11:
-    image: jenkins/agent:latest-jdk11
+    image: jenkins-agent:jdk11-sr
     depends_on:
       - jenkins
     networks:
