@@ -1,5 +1,8 @@
 pipeline {
     agent { label 'java11' }
+    environment {
+        GITEA_TOKEN = credentials("gitea_token_text")
+    }
     stages {
         stage("build") {
             steps {
