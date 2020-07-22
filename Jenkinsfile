@@ -20,6 +20,7 @@ pipeline {
 //         }
         stage("release") {
             steps {
+                sh "printenv"
                 sh "semantic-release"
             }
         }
