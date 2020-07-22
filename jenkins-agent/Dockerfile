@@ -1,9 +1,10 @@
-from jenkins/agent:latest-jdk11
+FROM jenkins/agent:latest-jdk11
 
-user root
+USER root
 
-run apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs npm
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+RUN apt-get install -y nodejs
 RUN npm install semantic-release @semantic-release/exec @saithodev/semantic-release-gitea -g
 
 
-user jenkins
+USER jenkins
