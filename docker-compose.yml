@@ -34,6 +34,7 @@ services:
     command: java -jar /usr/share/jenkins/agent.jar -jnlpUrl http://jenkins:8080/computer/jenkins-slave-jdk11/slave-agent.jnlp -secret a03d8621fce9475210f8618b48475f7244a155f30c249a6d5a0ff5d4d8692db9 -workDir "/home/jenkins/agent"
     links:
       - "nexus:mydocker"
+      - gitea
   gitea:
     image: gitea/gitea:latest
     environment:
