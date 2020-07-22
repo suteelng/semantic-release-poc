@@ -21,7 +21,7 @@ pipeline {
         stage("release") {
             steps {
                 sh "printenv"
-                sh "semantic-release"
+                sh "GITEA_TOKEN=0d52217a471423ba6210588baa607ae69135a342 semantic-release"
             }
         }
     }
