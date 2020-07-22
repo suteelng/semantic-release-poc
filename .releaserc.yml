@@ -4,7 +4,7 @@
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
     ["@saithodev/semantic-release-gitea", {
-      "giteaUrl": "http://localhost:3000",
+      "giteaUrl": "http://gitea:3000",
     }],
     ["@semantic-release/exec", {
       "publishCmd": "./gradlew jib -DsendCredentialsOverHttp=true -Djib.to.tags=${nextRelease.version}"
