@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker {image 'adoptopenjdk:11-jre-hotspot'}
+        docker {image 'jenkins/agent:latest-jdk11'}
     }
 
     stages {

@@ -18,7 +18,10 @@ services:
     ports:
       - "8080:8080"
       - "50000:50000"
+    privileged: true
+    user: "jenkins:1000"
     volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
       - "jenkins-data:/var/jenkins_home"
     networks:
       - semantic-release
