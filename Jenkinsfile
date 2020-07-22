@@ -1,7 +1,4 @@
 pipeline {
-    agent {
-        docker {image 'jenkins/agent:latest-jdk11'}
-    }
 
     stages {
         stage('Initialize'){
@@ -13,6 +10,9 @@ pipeline {
             }
         }
         stage("build") {
+            agent {
+                docker {image 'jenkins/agent:latest-jdk11'}
+            }
             steps {
                 sh './gradlew test'
             }
