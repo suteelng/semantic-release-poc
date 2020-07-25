@@ -8,7 +8,7 @@
       "assets": ["CHANGELOG.md"]
     }],
     ["@semantic-release/exec", {
-      "publishCmd": "./gradlew jib -DsendCredentialsOverHttp=true -Djib.to.tags=${nextRelease.version}"
+      "publishCmd": "./gradlew jib -DsendCredentialsOverHttp=true -Djib.to.tags=${nextRelease.version} -Djib.to.auth.username=${env.NEXUS_USR} -Djib.to.auth.password=${env.NEXUS_PSW}"
     }]
   ]
 }

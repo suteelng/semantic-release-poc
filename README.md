@@ -54,3 +54,5 @@ Build jenkins agent with nodejs support
 ```shell script
 docker build -t jenkins-agent:jdk11-sr .
 ```
+
+Note: also need to set GH_TOKEN
