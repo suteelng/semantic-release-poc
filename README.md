@@ -56,3 +56,11 @@ docker build -t jenkins-agent:jdk11-sr .
 ```
 
 Note: also need to set GH_TOKEN
+
+### Docker registry credential
+
+There is no way to pass variables from jenkins into semantic-release plugins. Tried to use environment variables
+with `env`. But `semantic-release/exec` plugin failed to read `env` variables.
+
+The solution is to use Jib gradle `image.to.auth` configuration in `build.gradle` to read system environment variables.
+
