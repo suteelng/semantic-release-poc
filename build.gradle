@@ -31,6 +31,10 @@ jib {
     }
     to {
         image = 'mydocker:8082/spring-sem-rel'
+        auth {
+            username = System.getenv('NEXUS_USR')
+            password = System.getenv('NEXUS_PSW')
+        }
     }
     allowInsecureRegistries = true
 }
