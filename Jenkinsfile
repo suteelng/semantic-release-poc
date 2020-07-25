@@ -30,7 +30,7 @@ pipeline {
             steps {
                 sh "printenv"
                 echo "[INFO] GIT_BRANCH: ${env.GIT_BRANCH}"
-                sh "GITEA_TOKEN=0d52217a471423ba6210588baa607ae69135a342 semantic-release"
+                sh "semantic-release"
             }
         }
     }
